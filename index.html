@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <title>LED-Steuerung für Tasmota</title>
+        <link rel="stylesheet" href="layout.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="alleLEDS.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <a href="#"><img src="img/logo.png" alt="logo" class="logo" /></a>
+            <h1>FaWoWa-Lichtsteuerung</h1>
+        </header>
+        <main>
+            <section class="card">
+                <h2>Alle Led's</h2>
+                <div>
+                    <input type="color" id="color-picker" class="color-picker" value="#FF0000" onchange="updateColor()" />
+                    <div class="slider-container">
+                        <input
+                            type="range"
+                            id="slider-dimmer"
+                            class="slider"
+                            min="0"
+                            max="100"
+                            value="100"
+                            oninput="aktualisiereDimmer()"
+                        />
+                        <span id="dimmer-value">100%</span>
+                    </div>
+                </div>
+                <br />
+                <button class="aus" onclick="schalteAus()">Aus</button>
+                <button class="an" onclick="schalteAn()">An</button>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>
