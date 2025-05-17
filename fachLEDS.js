@@ -10,14 +10,14 @@ function steuereAlle(farbe, dimmer) {
     sendeBefehl(ip, `Dimmer ${dimmer}`);
 }
 
-function aktualisiereDimmer() {
+function aktualisiereDimmerFach() {
     const dimmerValue = document.getElementById("slider-dimmer-fach").value;
     document.getElementById("dimmer-value-fach").innerText = `${dimmerValue}%`;
     const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
     steuereAlle(colorHex, dimmerValue);
 }
 
-function updateColor() {
+function updateColorFach() {
     const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
     const dimmerValue = document.getElementById("slider-dimmer-fach").value;
     steuereAlle(colorHex, dimmerValue);
