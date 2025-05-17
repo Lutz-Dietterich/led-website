@@ -5,7 +5,7 @@ function sendeBefehl(ip, befehl) {
     new Image().src = url;
 }
 
-function steuereAlle(farbe, dimmer) {
+function steuereFach(farbe, dimmer) {
     sendeBefehl(ip, `Color ${farbe}`);
     sendeBefehl(ip, `Dimmer ${dimmer}`);
 }
@@ -14,13 +14,13 @@ function aktualisiereDimmerFach() {
     const dimmerValue = document.getElementById("slider-dimmer-fach").value;
     document.getElementById("dimmer-value-fach").innerText = `${dimmerValue}%`;
     const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
-    steuereAlle(colorHex, dimmerValue);
+    steuereFach(colorHex, dimmerValue);
 }
 
 function updateColorFach() {
     const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
     const dimmerValue = document.getElementById("slider-dimmer-fach").value;
-    steuereAlle(colorHex, dimmerValue);
+    steuereFach(colorHex, dimmerValue);
 }
 
 function schalteAusFach() {
@@ -34,7 +34,7 @@ function schalteAusFach() {
 function schalteAnFach() {
     const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
     const dimmerValue = 100;
-    steuereAlle(colorHex, dimmerValue);
+    steuereFach(colorHex, dimmerValue);
     document.getElementById("slider-dimmer-fach").value = dimmerValue;
     document.getElementById("dimmer-value-fach").innerText = `${dimmerValue}%`;
 }
