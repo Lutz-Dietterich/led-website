@@ -2,10 +2,13 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>LED-Steuerung für Tasmota</title>
         <link rel="stylesheet" href="layout.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="alleLEDS.js" defer></script>
+        <script src="fachLEDS.js" defer></script>
     </head>
     <body>
         <header>
@@ -33,6 +36,27 @@
                 <br />
                 <button class="aus" onclick="schalteAus()">Aus</button>
                 <button class="an" onclick="schalteAn()">An</button>
+            </section>
+            <section class="card">
+                <h2>Fach Led's</h2>
+                <div>
+                    <input type="color" id="color-picker-fach" class="color-picker" value="#FF0000" onchange="updateColor()" />
+                    <div class="slider-container">
+                        <input
+                            type="range"
+                            id="slider-dimmer-fach"
+                            class="slider"
+                            min="0"
+                            max="100"
+                            value="100"
+                            oninput="aktualisiereDimmer()"
+                        />
+                        <span id="dimmer-value-fach">100%</span>
+                    </div>
+                </div>
+                <br />
+                <button class="aus" onclick="schalteAusFach()">Aus</button>
+                <button class="an" onclick="schalteAnFach()">An</button>
             </section>
         </main>
         <footer></footer>
