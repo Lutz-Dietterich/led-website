@@ -1,13 +1,13 @@
-const ip = "192.168.1.26";
+const ipFach = "192.168.1.26";
 
-function sendeBefehl(ip, befehl) {
-    const url = `http://${ip}/cm?cmnd=${befehl}`;
+function sendeBefehlFach(befehl) {
+    const url = `http://${ipFach}/cm?cmnd=${befehl}`;
     new Image().src = url;
 }
 
 function steuereFach(farbe, dimmer) {
-    sendeBefehl(ip, `Color ${farbe}`);
-    sendeBefehl(ip, `Dimmer ${dimmer}`);
+    sendeBefehlFach(`Color ${farbe}`);
+    sendeBefehlFach(`Dimmer ${dimmer}`);
 }
 
 function aktualisiereDimmerFach() {
@@ -24,8 +24,8 @@ function updateColorFach() {
 }
 
 function schalteAusFach() {
-    sendeBefehl(ip, `Color 000000`);
-    sendeBefehl(ip, `Dimmer 0`);
+    sendeBefehlFach(`Color 000000`);
+    sendeBefehlFach(`Dimmer 0`);
 
     document.getElementById("slider-dimmer-fach").value = 0;
     document.getElementById("dimmer-value-fach").innerText = `0%`;

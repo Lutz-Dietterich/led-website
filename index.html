@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="style.css" />
         <script src="alleLEDS.js" defer></script>
         <script src="fachLEDS.js" defer></script>
+        <script src="alfredLEDS.js" defer></script>
     </head>
     <body>
         <header>
@@ -57,6 +58,27 @@
                 <br />
                 <button class="aus" onclick="schalteAusFach()">Aus</button>
                 <button class="an" onclick="schalteAnFach()">An</button>
+            </section>
+            <section class="card">
+                <h2>Alfred Led's</h2>
+                <div>
+                    <input type="color" id="color-picker-alfred" class="color-picker" value="#FF0000" onchange="updateColorAlfred()" />
+                    <div class="slider-container">
+                        <input
+                            type="range"
+                            id="slider-dimmer-alfred"
+                            class="slider"
+                            min="0"
+                            max="100"
+                            value="100"
+                            oninput="aktualisiereDimmerAlfred()"
+                        />
+                        <span id="dimmer-value-alfred">100%</span>
+                    </div>
+                </div>
+                <br />
+                <button class="aus" onclick="schalteAusAlfred()">Aus</button>
+                <button class="an" onclick="schalteAnAlfred()">An</button>
             </section>
         </main>
         <footer></footer>
