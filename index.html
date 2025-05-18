@@ -7,9 +7,10 @@
         <title>LED-Steuerung für Tasmota</title>
         <link rel="stylesheet" href="layout.css" />
         <link rel="stylesheet" href="style.css" />
-        <script src="alleLEDS.js" defer></script>
-        <script src="fachLEDS.js" defer></script>
-        <script src="alfredLEDS.js" defer></script>
+        <script src="./js/alleLEDS.js" defer></script>
+        <script src="./js/fachLEDS.js" defer></script>
+        <script src="./js/alfredLEDS.js" defer></script>
+        <script src="./js/prerset.js" defer></script>
     </head>
     <body>
         <header>
@@ -17,6 +18,11 @@
             <h1>FaWoWa-Lichtsteuerung</h1>
         </header>
         <main>
+            <section class="card">
+                <h2>Presets</h2>
+                <button onclick="presetFachRot50AlfredBlau70()">Bunt</button>
+            </section>
+
             <section class="card">
                 <h2>Alle Led's</h2>
                 <div>
