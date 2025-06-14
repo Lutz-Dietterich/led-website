@@ -4,12 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>LED-Steuerung für Tasmota</title>
+        <title>FaWoWa LED-Steuerung</title>
         <link rel="stylesheet" href="layout.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="./js/alleLEDS.js" defer></script>
         <script src="./js/fachLEDS.js" defer></script>
         <script src="./js/alfredLEDS.js" defer></script>
+        <script src="./js/raumLEDS.js" defer></script>
         <script src="./js/prersetBunt.js" defer></script>
         <script src="./js/prersetHell.js" defer></script>
     </head>
@@ -66,6 +67,27 @@
                 <br />
                 <button class="aus" onclick="schalteAusFach()">Aus</button>
                 <button class="an" onclick="schalteAnFach()">An</button>
+            </section>
+            <section class="card">
+                <h2>Raum Led's</h2>
+                <div>
+                    <input type="color" id="color-picker-raum" class="color-picker" value="#FF0000" onchange="updateColorRaum()" />
+                    <div class="slider-container">
+                        <input
+                            type="range"
+                            id="slider-dimmer-raum"
+                            class="slider"
+                            min="0"
+                            max="100"
+                            value="100"
+                            oninput="aktualisiereDimmerRaum()"
+                        />
+                        <span id="dimmer-value-raum">100%</span>
+                    </div>
+                </div>
+                <br />
+                <button class="aus" onclick="schalteAusRaum()">Aus</button>
+                <button class="an" onclick="schalteAnRaum()">An</button>
             </section>
             <section class="card">
                 <h2>Alfred Led's</h2>

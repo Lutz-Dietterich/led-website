@@ -1,40 +1,40 @@
-const ipFach = "192.168.155.212";
+const ipRaum = "192.168.155.212";
 
-function sendeBefehlFach(befehl) {
-    const url = `http://${ipFach}/cm?cmnd=${befehl}`;
+function sendeBefehlRaum(befehl) {
+    const url = `http://${ipRaum}/cm?cmnd=${befehl}`;
     new Image().src = url;
 }
 
-function steuereFach(farbe, dimmer) {
-    sendeBefehlFach(`Color ${farbe}`);
-    sendeBefehlFach(`Dimmer ${dimmer}`);
+function steuereRaum(farbe, dimmer) {
+    sendeBefehlRaum(`Color ${farbe}`);
+    sendeBefehlRaum(`Dimmer ${dimmer}`);
 }
 
-function aktualisiereDimmerFach() {
-    const dimmerValue = document.getElementById("slider-dimmer-fach").value;
-    document.getElementById("dimmer-value-fach").innerText = `${dimmerValue}%`;
-    const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
-    steuereFach(colorHex, dimmerValue);
+function aktualisiereDimmerRaum() {
+    const dimmerValue = document.getElementById("slider-dimmer-raum").value;
+    document.getElementById("dimmer-value-raum").innerText = `${dimmerValue}%`;
+    const colorHex = document.getElementById("color-picker-raum").value.replace("#", "");
+    steuereRaum(colorHex, dimmerValue);
 }
 
-function updateColorFach() {
-    const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
-    const dimmerValue = document.getElementById("slider-dimmer-fach").value;
-    steuereFach(colorHex, dimmerValue);
+function updateColorRaum() {
+    const colorHex = document.getElementById("color-picker-raum").value.replace("#", "");
+    const dimmerValue = document.getElementById("slider-dimmer-raum").value;
+    steuereRaum(colorHex, dimmerValue);
 }
 
-function schalteAusFach() {
-    sendeBefehlFach(`Color 000000`);
-    sendeBefehlFach(`Dimmer 0`);
+function schalteAusRaum() {
+    sendeBefehlRaum(`Color 000000`);
+    sendeBefehlRaum(`Dimmer 0`);
 
-    document.getElementById("slider-dimmer-fach").value = 0;
-    document.getElementById("dimmer-value-fach").innerText = `0%`;
+    document.getElementById("slider-dimmer-raum").value = 0;
+    document.getElementById("dimmer-value-raum").innerText = `0%`;
 }
 
-function schalteAnFach() {
-    const colorHex = document.getElementById("color-picker-fach").value.replace("#", "");
+function schalteAnRaum() {
+    const colorHex = document.getElementById("color-picker-raum").value.replace("#", "");
     const dimmerValue = 100;
-    steuereFach(colorHex, dimmerValue);
-    document.getElementById("slider-dimmer-fach").value = dimmerValue;
-    document.getElementById("dimmer-value-fach").innerText = `${dimmerValue}%`;
+    steuereRaum(colorHex, dimmerValue);
+    document.getElementById("slider-dimmer-raum").value = dimmerValue;
+    document.getElementById("dimmer-value-raum").innerText = `${dimmerValue}%`;
 }
