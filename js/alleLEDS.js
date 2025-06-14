@@ -1,4 +1,4 @@
-const ips = ["192.168.1.26", "192.168.1.51", "192.168.1.48"];
+const ips = ["192.168.155.211", "192.168.155.212", "192.168.155.213"];
 
 function sendeBefehl(ip, befehl) {
     const url = `http://${ip}/cm?cmnd=${befehl}`;

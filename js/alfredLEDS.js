@@ -1,4 +1,4 @@
-const ipAlfred = "192.168.1.51";
+const ipAlfred = "192.168.155.213";
 
 function sendeBefehlAlfred(befehl) {
     const url = `http://${ipAlfred}/cm?cmnd=${befehl}`;

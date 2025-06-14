@@ -1,4 +1,4 @@
-const ipFach = "192.168.155.211";
+const ipFach = "192.168.155.212";
 
 function sendeBefehlFach(befehl) {
     const url = `http://${ipFach}/cm?cmnd=${befehl}`;
